@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Room Vitals</title>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <nav class="navbar-container">
+        <div class="logo">RoomVitals</div>
+        <ul class="navbar-items">
+          <li class="Hjem-nav"><a href="./index.html">Hjem</a></li>
+          <li class="Indstillinger-nav"><a href="./indstillinger.html">Indstillinger</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="indhold-container">
+      <div class="Rum-item">
+        <div class="Rum">Rum: 3D</div>
+      </div>
+      <div class="Temperatur-live">
+        <div class="Temperatur-live-data">Temperatur: {{currentTemperatur}}°</div>
+      </div>
+      <div class="Luftfugtighed-live">
+        <div class="Luftfugtighed-live-data">Luftfugtighed: {{currentHumidity}}</div>
+      </div>
+      <div class="Luftkvalitet-live">
+        <div class="Luftkvalitet-live-data">Luftkvalitet: {{currentAQ.list[0].main.aqi}}</div>
+      </div>
+      <div class="Personer">
+        <div class="AntalPersoner-måling">Personer: 0</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

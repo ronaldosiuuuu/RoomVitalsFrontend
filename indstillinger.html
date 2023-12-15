@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomVitals Indstillinger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <nav class="navbar-container">
+                <div class="logo">RoomVitals</div>
+                <ul class="navbar-items">
+                    <li class="Hjem-nav"><a href="./index.html">Hjem</a></li>
+                    <li class="Indstillinger-nav"><a href="./indstillinger.html">Indstillinger</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="temp">
+            <h1>Indstillinger: </h1>
+            <div class="temp2">
+            <div class="MinTempSlider">
+                <label for="minTemperatur">Definerer en minimum temperatur:</label>
+                <input type="range" v-model="minDefined" min="-20" max="100">
+                <p>{{minDefined}}</p>
+            </div>
+            <div class="MaxTempSlider">
+                <label for="maxTemperatur">Definerer en maksimum temperatur:</label>
+                <input type="range" v-model="maxDefined" min="-10" max="100">
+                <p>{{maxDefined}}</p>
+            </div>
+            </div>
+            <div class="hum">
+            <div class="MinHumSlider">
+                <label for="minHum">Definerer en minimum luftfugtighed:</label>
+                <input type="range" v-model="minDefinedHum" min="-20" max="100">
+                <p>{{minDefinedHum}}</p>
+            </div>
+            <div class="MaxHumSlider">
+                <label for="maxHum">Definerer en maksimum luftfugtighed:</label>
+                <input type="range" v-model="maxDefinedHum" min="-10" max="100">
+                <p>{{maxDefinedHum}}</p>
+            </div>
+            </div>
+            <div class="aq">
+            <div class="MinAQSlider">
+                <label for="minAQ">Definerer en minimum luftkvalitet:</label>
+                <input type="range" v-model="minDefinedAQ" min="0" max="5">
+                <p>{{minDefinedAQ}}</p>
+            </div>
+            <div class="MaxAQSlider">
+                <label for="maxAQ">Definerer en maksimum luftkvalitet:</label>
+                <input type="range" v-model="maxDefinedAQ" min="0" max="5">
+                <p>{{maxDefinedAQ}}</p>
+            </div>
+            </div>
+            <button @click="defineTempAndHumidityAndAirQuality">Bekræft</button>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
